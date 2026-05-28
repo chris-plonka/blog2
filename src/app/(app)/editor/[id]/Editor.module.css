@@ -1,0 +1,66 @@
+.quillWrapper :global(.ql-toolbar),
+.quillWrapper :global(.ql-container) {
+  border-color: hsl(var(--border));
+}
+
+.quillWrapper :global(.ql-toolbar) {
+  background-color: hsl(var(--background));
+}
+
+.quillWrapper :global(.ql-editor) {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+/* Button styles */
+.quillWrapper :global(.ql-toolbar button) {
+  border: 1px solid hsl(var(--border));
+}
+
+/* Icon color */
+.quillWrapper :global(.ql-toolbar .ql-stroke) {
+  stroke: hsl(var(--foreground));
+}
+
+.quillWrapper :global(.ql-toolbar .ql-fill) {
+  fill: hsl(var(--foreground));
+}
+
+/* For dropdown arrows and other special cases */
+.quillWrapper :global(.ql-toolbar .ql-picker-label::before),
+.quillWrapper
+  :global(
+    .ql-toolbar .ql-color-picker .ql-picker-label svg,
+    .ql-toolbar .ql-icon-picker .ql-picker-label svg
+  ) {
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--border)) !important;
+}
+
+.quillWrapper :global(.ql-toolbar.ql-snow),
+.quillWrapper :global(.ql-container.ql-snow) {
+  border: 1px solid hsl(var(--border));
+}
+
+.quillWrapper
+  :global(.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options) {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--border));
+}
+
+.quillWrapper :global(.ql-snow .ql-picker-options .ql-picker-item) {
+  color: hsl(var(--foreground));
+  padding: 0px 4px;
+}
+
+.quillWrapper :global(.ql-snow .ql-picker-options .ql-picker-item:hover) {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+.quillWrapper :global(.ql-snow .ql-tooltip) {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--border));
+}

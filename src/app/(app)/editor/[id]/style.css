@@ -1,0 +1,50 @@
+/* Apply styles to the editor container */
+.custom-editor {
+  min-height: 350px;
+  border-radius: 4px;
+  overflow: hidden;
+  /* border: 1px solid var(--border); */
+}
+.custom-editor .ql-editor {
+  min-height: 350px; /* Match the height of the container */
+}
+
+.ql-tooltip.ql-editing {
+  left: 1px !important;
+}
+
+/* Style the toolbar */
+.custom-editor .ql-toolbar {
+  border-bottom: 1px solid #ddd; /* Light border below the toolbar */
+  background-color: #f9f9f9;
+  padding: 8px; /* Padding around the toolbar */
+}
+
+/* Optional: Customize the toolbar buttons */
+.custom-editor .ql-toolbar button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 4px;
+}
+
+.custom-editor .ql-toolbar button:hover {
+  background-color: #e0e0e0; /* Light background on hover */
+  border-radius: 4px; /* Rounded corners on hover */
+}
+
+.custom-editor .ql-toolbar button.ql-active {
+  background-color: #ddd; /* Background for active buttons */
+}
+
+/* Customize dropdowns and input fields in the toolbar */
+.custom-editor .ql-toolbar .ql-picker {
+  border: 1px solid hsl(var(--border)); /* Light border for pickers */
+  border-radius: 4px; /* Rounded corners for pickers */
+}
+
+.custom-editor .ql-toolbar .ql-picke {
+  background-color: hsl(var(--background));
+}
