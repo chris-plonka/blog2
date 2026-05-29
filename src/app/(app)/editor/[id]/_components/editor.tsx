@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import ReactQuill from "react-quill";
 import "../style.css";
 
-import "react-quill/dist/quill.snow.css";
+//import "react-quill/dist/quill.snow.css";
 import styles from "../Editor.module.css";
 
 interface editorProps {
