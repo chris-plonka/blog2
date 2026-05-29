@@ -1,6 +1,6 @@
 export const SITE_URL =
   process.env.NODE_ENV === "production"
-    ? "https://one-blog-navy.vercel.app/"
+    ? "https://blog2-two-chi.vercel.app/"
     : "http://localhost:3000";
 
 export const SITE_NAME = "One Blog";
