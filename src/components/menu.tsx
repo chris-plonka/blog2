@@ -78,13 +78,13 @@ const Menu = (props: MenuProps) => {
         <DropdownMenuItem asChild>
           <a
             target="_blank"
-            href="mailto:akshaymoolya88@gmail.com?subject=Bug%20Report%20for%20Threads%20Application"
+            href="mailto:info@krzysztofplonka.pl?subject=Bug%20Report%20for%20Threads%20Application"
           >
             Report a bug
           </a>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <a target="_blank" href="https://Akshay33.vercel.app">
+          <a target="_blank" href="https://krzysztofplonka.pl">
             About Me
           </a>
         </DropdownMenuItem>
