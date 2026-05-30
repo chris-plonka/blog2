@@ -38,8 +38,8 @@
     --card: 0 0% 98%;
     --card-foreground: 0 0% 4%;
 
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 88%;
+    --popover: 0 0% 88%;
+    --popover-foreground: 0 0% 4%;
 
     --primary: 0 3.73%, 10.49%;
     --primary-foreground: 0 0% 0%;
@@ -50,8 +50,8 @@
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 15%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
