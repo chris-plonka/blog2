@@ -72,7 +72,8 @@ const Blogcard = ({ id, user }: userPostProps) => {
           <div>{author.name}</div>
           <div className="text-xs text-muted-foreground">
             {formatPostDate(createdAt)}
-			<span>{readingTime(content ?? '').text}</span>
+			<span>·</span>
+			<span>{readingTime(content ?? ' ').text}</span>
 
           </div>
         </div>
