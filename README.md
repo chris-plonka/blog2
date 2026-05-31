@@ -8,7 +8,7 @@
 | --------------------- | ------------------------------------------------ |
 | Framework             | [Next.js](https://nextjs.org/)                   |
 | Deployment            | [Vercel](https://vercel.com)                     |
-| Database              | [Neon](https://neon.tech)                        |
+| Database              | [Supabase](https://supabase.com)                        |
 | ORM                   | [Prisma](https://www.prisma.io)                  |
 | Rich                  | Text Editor: [react-quill](https://quilljs.com/) |
 | Icons                 | [Tabler icons](https://tabler-icons.io/)         |
@@ -23,13 +23,13 @@ Follow these steps to run the project locally on your machine:
 1. Clone the repository
 
 ```bash
-git clone https://github.com/AkshayMoolya/one-blog.git
+git clone https://github.com/chris-plonka/blog2.git
 ```
 
 2. Navigate to the project directory
 
 ```bash
-cd one-blog
+cd blog2
 ```
 
 3. Install dependencies
@@ -50,5 +50,5 @@ npm run dev
 
 <hr>
 <p align="center">
-Made with ❤️ in Akshay Moolya
+Made with ❤️ in Krzysztof Płonka
 </p>
