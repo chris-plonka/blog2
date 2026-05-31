@@ -56,7 +56,7 @@ const Danger = () => {
   };
 
   return (
-    <div className="rounded-lg shadow-md border dark:border-red-500/50 dark:bg-zinc-900/60">
+    <div className="rounded-lg shadow-md border dark:border-red-500/50 dark:bg-zinc-0/60">
       <div className="p-4">
         <h4 className="mb-6 text-2xl font-semibold">Delete my account</h4>
         <p className="mb-4 text-sm">
