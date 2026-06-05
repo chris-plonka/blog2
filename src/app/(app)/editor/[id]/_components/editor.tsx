@@ -49,5 +49,3 @@ const Editor = ({ onChange, value }: editorProps) => {
 };
 
 export default Editor;
-
-

@@ -13,7 +13,6 @@ import LikeButton from "@/components/shared/like-button";
 import { getPostById } from "@/actions";
 import UserPostPlaceholder from "@/components/user-post-placeholder";
 import { notFound } from "next/navigation";
-import readingTime from 'reading-time'
 
 interface userPostProps {
   id: string;
@@ -72,9 +71,6 @@ const Blogcard = ({ id, user }: userPostProps) => {
           <div>{author.name}</div>
           <div className="text-xs text-muted-foreground">
             {formatPostDate(createdAt)}
-			<span> · </span>
-			<span>{readingTime(content ?? ' ').text}</span>
-
           </div>
         </div>
       </Link>

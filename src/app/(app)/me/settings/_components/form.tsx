@@ -77,7 +77,7 @@ const UserSettingsForm = ({ user }: FormProps) => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="space-y-8 shadow-md"
       >
-        <div className="space-y-4 rounded-lg border dark:bg-zinc-0/60 p-4">
+        <div className="space-y-4 rounded-lg border dark:bg-zinc-900/60 p-4">
           <h4 className="mb-6 text-2xl font-semibold">Account</h4>
           <Avatar className="size-24">
             <AvatarImage

@@ -26,7 +26,8 @@
         "./src/*"
       ]
     },
-    "target": "es5",
+   
+
     "forceConsistentCasingInFileNames": true
   },
   "include": [
