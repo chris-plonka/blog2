@@ -21,7 +21,7 @@ const Posts = ({ user }: PostsProps) => {
   if (isLoading) {
     return (
       <>
-        {Array.from({ length: 3 }).map((_, i) => (
+        {Array.from({ length: 3 }).map((post, i) => (
           <PostPlaceholder key={i} />
         ))}
       </>
