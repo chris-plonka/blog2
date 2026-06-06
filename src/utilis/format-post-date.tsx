@@ -30,7 +30,7 @@ export const formatPostDate = (date: string | Date) => {
   const targetYear = dayjs(date).year();
   const isInCurrentYear = targetYear === currentYear;
 
-  if (isMoreThan7DaysAgo && isInCurrentYear) return dayjs(date).format("MMM D");
+  if (isMoreThan7DaysAgo && isInCurrentYear) return dayjs(date).format("MMM D, YYYY");
   if (!isInCurrentYear) return dayjs(date).format("MMM D, YYYY");
 
   return dayjs(date).fromNow();
