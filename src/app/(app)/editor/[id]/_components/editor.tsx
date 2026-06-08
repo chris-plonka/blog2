@@ -6,7 +6,7 @@ import styles from "../Editor.module.css";
 import "../style.css";
 
 const ReactQuill = dynamic(
-  () => import("react-quill"),
+  () => import("react-quill-new"),
   { ssr: false }
 );
 
