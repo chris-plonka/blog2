@@ -31,7 +31,7 @@
     "isomorphic-dompurify": "^2.13.0",
     "lucide-react": "^0.408.0",
 	"next": "^15.5.9",
-    "next-auth": "^4.24.7",
+	"next-auth": "5.0.0-beta.29",
     "next-themes": "^0.3.0",
     "quill-image-resize-module": "^3.0.0",
     "react": "^18.3.1",
@@ -40,13 +40,11 @@
     "react-quill": "^2.0.0",
 	"reading-time": "^1.5.0",
     "tailwind-merge": "^2.4.0",
-"tw-animate-css": "^1.2.4",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-"@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
+
     "@types/node": "^20.14.10",
     "@types/react": "^18",
     "@types/react-dom": "^18",
