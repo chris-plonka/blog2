@@ -104,7 +104,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <Providers>
-        <body className={inter.className}>
+        <body className={inter.className} className="h-64 overflow-y-scroll [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-400 [&::-webkit-scrollbar-thumb]:rounded-md hover:[&::-webkit-scrollbar-thumb]:bg-gray-500">
           <Navbar />
           <main className="mx-auto min-h-[calc(100vh-68px)] max-w-4xl px-4 pb-16 pt-20 lg:pt-24">
             {children}
