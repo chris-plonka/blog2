@@ -47,6 +47,7 @@ const Form = (props: FormProps) => {
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["posts"],
+		router.refresh();
       });
       toast({
         title: "Draft saved",
