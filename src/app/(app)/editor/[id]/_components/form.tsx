@@ -204,6 +204,9 @@ React.useEffect(() => {
             }}
           />
         </div>
+		<div style={{background:"yellow", padding:"10px"}}>
+  {content}
+</div>
         <Editor
 		key={post.updatedAt.toString()}
           value={content}
