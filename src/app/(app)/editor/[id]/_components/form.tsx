@@ -52,7 +52,7 @@ const Form = (props: FormProps) => {
         title: "Draft saved",
         description: "Your changes have been saved as a draft",
       });
-      router.refresh();
+      
     },
     onError: (error: Error) => {
       toast({
@@ -73,6 +73,7 @@ const Form = (props: FormProps) => {
         description: "Your post has been published",
       });
       router.push(`/posts/${post.id}`);
+      router.refresh();
     },
     onError: (error: Error) => {
       toast({
