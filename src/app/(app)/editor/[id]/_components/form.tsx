@@ -203,7 +203,8 @@ React.useEffect(() => {
               setDescription(e.target.value);
             }}
           />
-        
+        </div>
+		
         <Editor
 		key={post.updatedAt.toString()}
           value={content}
