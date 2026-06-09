@@ -36,7 +36,11 @@ const Form = (props: FormProps) => {
   const [description, setDescription] = React.useState(post.description);
   const [content, setContent] = React.useState(post.content || "");
   
-  
+  React.useEffect(() => {
+  setContent(post.content || "");
+}, [post.content]);
+
+
   React.useEffect(() => {
   console.log("POST CONTENT:", post.content);
 }, [post]);
