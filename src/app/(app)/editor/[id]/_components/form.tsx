@@ -46,13 +46,13 @@ const Form = (props: FormProps) => {
     mutationFn: () => savePost(post.id, title, content, description, false),
     onSuccess: () => {
       queryClient.invalidateQueries({
-        queryKey: ["posts"],
-		router.refresh();
+        queryKey: ["posts"],	
       });
       toast({
         title: "Draft saved",
         description: "Your changes have been saved as a draft",
       });
+      router.refresh();
     },
     onError: (error: Error) => {
       toast({
