@@ -15,6 +15,7 @@ const FormWrapper = ({ id }: formWrapperProps) => {
   const { data, isLoading } = useQuery({
     queryKey: ["getPostById", id],
     queryFn: () => getPostById(id),
+	
   });
 
   if (isLoading) {
@@ -42,6 +43,7 @@ const FormWrapper = ({ id }: formWrapperProps) => {
         </div>
       </>
     );
+	console.log("POST FROM QUERY", data?.content);
   }
 
   if (!data) {
