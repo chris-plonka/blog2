@@ -22,7 +22,7 @@ const FormWrapper = ({ id }: formWrapperProps) => {
       <>
         <div className="flex items-center justify-between">
           <Skeleton className="h-10 w-20" /> {/* Back button skeleton */}
-          <Skeleton className="h-10 w-10" /> {/* Settings button skeleton */}
+       //   <Skeleton className="h-10 w-10" /> {/* Settings button skeleton */}
         </div>
         <div className="my-8 space-y-6">
           <div className="flex flex-col gap-1.5">
