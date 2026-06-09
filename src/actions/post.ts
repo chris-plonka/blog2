@@ -216,7 +216,7 @@ export const getPostById = async (id: string) => {
         },
       },
     });
-
+console.log("GET POST BY ID RAW:", id);
     return post;
   } catch (error: any) {
     handleError(error);
