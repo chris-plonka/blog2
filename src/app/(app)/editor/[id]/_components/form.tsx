@@ -35,6 +35,23 @@ const Form = (props: FormProps) => {
   const [title, setTitle] = React.useState(post.title);
   const [description, setDescription] = React.useState(post.description);
   const [content, setContent] = React.useState(post.content || "");
+  
+  
+  React.useEffect(() => {
+  console.log("POST CONTENT:", post.content);
+}, [post]);
+
+React.useEffect(() => {
+  console.log("STATE CONTENT:", content);
+}, [content]);
+  
+  
+  
+  
+  
+  
+  
+  
   const [visibility, setVisibility] = React.useState<Visibility>(
     post.visibility
   );
