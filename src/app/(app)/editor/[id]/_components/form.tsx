@@ -205,8 +205,10 @@ React.useEffect(() => {
           />
         </div>
         <Editor
+		key={post.updatedAt.toString()}
           value={content}
           onChange={(value: string) => setContent(value)}
+		  
         />
         <div
           className={cn(
