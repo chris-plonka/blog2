@@ -1,4 +1,4 @@
-import { InstagramIcon, TwitterIcon, YoutubeIcon } from "lucide-react";
+import { InstagramIcon, TwitterIcon, YoutubeIcon, GithubIcon } from "lucide-react";
 import * as React from "react";
 
 type Links = Array<{
@@ -8,6 +8,10 @@ type Links = Array<{
 
 const Footer = () => {
   const links: Links = [
+    {
+      href: "https://github.com/chris-plonka",
+      icon: <GithubIcon size={20} />,
+    },
     {
       href: "https://twitter.com/",
       icon: <TwitterIcon size={20} />,
