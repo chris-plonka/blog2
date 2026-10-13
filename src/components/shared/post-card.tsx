@@ -28,7 +28,7 @@ export interface PostCardProps {
 const getFirstImageUrl = (htmlContent: string | null | undefined): string | null => {
   if (!htmlContent) return null;
   const match = htmlContent.match(/<img[^>]+src=["']([^"']+)["']/i);
-  return match ? match[1] : null;
+  return match ? match : null;
 };
 
 const PostCard = (props: PostCardProps) => {
@@ -38,28 +38,28 @@ const PostCard = (props: PostCardProps) => {
   const firstImage = getFirstImageUrl(content);
 
   return (
-    // bg-white (całe białe tło), border border-slate-200 (cienka szara obwódka)
-    <article className="flex flex-col h-full border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow relative">
+    // bg-white (całe białe tło), border border-slate-200 (szara obwódka). Usunięto h-full, aby kafelki mogły mieć różną wysokość.
+    <article className="flex flex-col border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow relative">
       
-      {/* Warunkowe renderowanie zdjęcia: sekcja pojawia się TYLKO, gdy post zawiera obrazek */}
+      {/* Zdjęcie wyświetla się TYLKO wtedy, gdy faktycznie istnieje w treści posta */}
       {firstImage && (
         <Link 
           href={`/${published ? "posts" : "editor"}/${id}`} 
-          className="relative w-full h-48 bg-slate-50 block overflow-hidden group border-b border-slate-100"
+          className="relative w-full h-56 bg-slate-50 block overflow-hidden group border-b border-slate-100"
         >
           <Image
-            src={firstImage}
+            src={firstImage} 
             alt={title}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             unoptimized={firstImage.startsWith('data:image')}
           />
         </Link>
       )}
 
-      {/* Kontener na treść pod zdjęciem */}
-      <div className="flex flex-col flex-grow p-5 justify-between gap-4">
+      {/* Kontener na treść dostosowuje się wysokością do długości opisu */}
+      <div className="flex flex-col p-5 gap-4">
         
         <div className="space-y-3">
           {/* Autor i data */}
@@ -92,7 +92,7 @@ const PostCard = (props: PostCardProps) => {
             href={`/${published ? "posts" : "editor"}/${id}`}
             className="block space-y-2 group"
           >
-            <h2 className="text-lg font-bold text-slate-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
+            <h2 className="text-xl font-bold text-slate-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
               {title}
             </h2>
             <p className="line-clamp-4 text-sm text-slate-600 leading-relaxed">
@@ -102,7 +102,7 @@ const PostCard = (props: PostCardProps) => {
         </div>
 
         {/* Dolny pasek: polubienia oraz przyciski kontrolne */}
-        <div className="flex items-center justify-between mt-auto pt-3 border-t border-slate-100">
+        <div className="flex items-center justify-between pt-3 border-t border-slate-100">
           <div className="flex items-center gap-1.5 text-sm font-medium text-slate-600">
             <HeartIcon size={18} className="text-red-500 fill-red-500" />
             <span>{likes.length}</span>
