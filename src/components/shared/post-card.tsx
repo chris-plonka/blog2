@@ -41,7 +41,7 @@ const PostCard = (props: PostCardProps) => {
   const firstImage = getFirstImageUrl(content);
 
   return (
-    <article className="flex flex-col border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow relative break-inside-avoid">
+    <article className="flex flex-col border border-slate-200  overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow relative break-inside-avoid">
       
       {/* Zdjęcie wyświetla się TYLKO wtedy, gdy faktycznie istnieje w treści posta */}
       {firstImage && (
