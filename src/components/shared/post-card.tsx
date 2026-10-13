@@ -12,10 +12,13 @@ import Controls from "./controls";
 import { formatPostDate } from "@/utilis/format-post-date";
 
 export interface PostCardProps {
+  // Zmieniamy definicję typu na Partial (opcjonalny), aby TypeScript nie blokował kompilacji webpacka
   post: Pick<
     Post,
-    "id" | "title" | "description" | "published" | "createdAt" | "content"
+    "id" | "title" | "description" | "published" | "createdAt"
   > & {
+    content?: string | null;
+  } & {
     likes: Array<Pick<Like, "id">>;
   } & {
     author: Pick<User, "name" | "image" | "id" | "isAdmin">;
@@ -28,7 +31,7 @@ export interface PostCardProps {
 const getFirstImageUrl = (htmlContent: string | null | undefined): string | null => {
   if (!htmlContent) return null;
   const match = htmlContent.match(/<img[^>]+src=["']([^"']+)["']/i);
-  return match ? match : null;
+  return match ? match[1] : null;
 };
 
 const PostCard = (props: PostCardProps) => {
@@ -38,8 +41,7 @@ const PostCard = (props: PostCardProps) => {
   const firstImage = getFirstImageUrl(content);
 
   return (
-    // bg-white (całe białe tło), border border-slate-200 (szara obwódka). Usunięto h-full, aby kafelki mogły mieć różną wysokość.
-    <article className="flex flex-col border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow relative">
+    <article className="flex flex-col border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow relative break-inside-avoid">
       
       {/* Zdjęcie wyświetla się TYLKO wtedy, gdy faktycznie istnieje w treści posta */}
       {firstImage && (
@@ -49,7 +51,7 @@ const PostCard = (props: PostCardProps) => {
         >
           <Image
             src={firstImage} 
-            alt={title}
+            alt={title || "Post image"}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
@@ -58,7 +60,7 @@ const PostCard = (props: PostCardProps) => {
         </Link>
       )}
 
-      {/* Kontener na treść dostosowuje się wysokością do długości opisu */}
+      {/* Kontener na treść */}
       <div className="flex flex-col p-5 gap-4">
         
         <div className="space-y-3">
