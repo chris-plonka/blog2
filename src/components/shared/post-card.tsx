@@ -5,7 +5,7 @@ import { BadgeCheck, HeartIcon } from "lucide-react";
 import Link from "next/link";
 import { type User } from "next-auth";
 import * as React from "react";
-import Image from "next/image"; // 1. Importujemy komponent Image z Next.js
+import Image from "next/image";
 
 import UserAvatar from "./user-avatar";
 import Controls from "./controls";
@@ -14,8 +14,7 @@ import { formatPostDate } from "@/utilis/format-post-date";
 export interface PostCardProps {
   post: Pick<
     Post,
-    // 2. Dodajemy "imageUrl" (lub "coverImage" - zależnie jak masz w Prisma) do typu Pick
-    "id" | "title" | "description" | "published" | "createdAt" | "imageUrl"
+    "id" | "title" | "description" | "published" | "createdAt" | "content"
   > & {
     likes: Array<Pick<Like, "id">>;
   } & {
@@ -26,31 +25,41 @@ export interface PostCardProps {
   queryKey: string;
 }
 
+const getFirstImageUrl = (htmlContent: string | null | undefined): string | null => {
+  if (!htmlContent) return null;
+  const match = htmlContent.match(/<img[^>]+src=["']([^"']+)["']/i);
+  return match ? match[1] : null;
+};
+
 const PostCard = (props: PostCardProps) => {
   const { post, user, showAuthor = true, queryKey } = props;
-  // 3. Destrukturyzujemy imageUrl z obiektu post
-  const { id, title, description, published, createdAt, likes, author, imageUrl } = post;
+  const { id, title, description, published, createdAt, likes, author, content } = post;
+
+  const firstImage = getFirstImageUrl(content);
 
   return (
-    // 4. Zmieniamy strukturę na flex-col, dodajemy zaokrąglenia i pełną wysokość h-full dla równego gridu
-    <article className="flex flex-col h-full border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-shadow relative">
+    // bg-white (całe białe tło), border border-slate-200 (cienka szara obwódka)
+    <article className="flex flex-col h-full border border-slate-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow relative">
       
-      {/* 5. Sekcja zdjęcia na górze kafelka */}
-      <Link 
-        href={`/${published ? "posts" : "editor"}/${id}`} 
-        className="relative w-full h-48 bg-slate-100 dark:bg-slate-800 block overflow-hidden group"
-      >
-        <Image
-          src={imageUrl || '/placeholder.jpg'} // Jeżeli post nie ma zdjęcia, pokaże się placeholder z folderu /public
-          alt={title}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-      </Link>
+      {/* Warunkowe renderowanie zdjęcia: sekcja pojawia się TYLKO, gdy post zawiera obrazek */}
+      {firstImage && (
+        <Link 
+          href={`/${published ? "posts" : "editor"}/${id}`} 
+          className="relative w-full h-48 bg-slate-50 block overflow-hidden group border-b border-slate-100"
+        >
+          <Image
+            src={firstImage}
+            alt={title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            unoptimized={firstImage.startsWith('data:image')}
+          />
+        </Link>
+      )}
 
-      {/* 6. Kontener na treść pod zdjęciem */}
-      <div className="flex flex-col flex-grow p-4 justify-between gap-4">
+      {/* Kontener na treść pod zdjęciem */}
+      <div className="flex flex-col flex-grow p-5 justify-between gap-4">
         
         <div className="space-y-3">
           {/* Autor i data */}
@@ -59,7 +68,7 @@ const PostCard = (props: PostCardProps) => {
               <>
                 <Link
                   href={`/users/${author.id}`}
-                  className="flex items-center gap-1 text-sm text-slate-700 dark:text-slate-300 hover:underline"
+                  className="flex items-center gap-1 text-sm text-slate-700 hover:underline"
                 >
                   <UserAvatar
                     userId={author.id}
@@ -83,18 +92,18 @@ const PostCard = (props: PostCardProps) => {
             href={`/${published ? "posts" : "editor"}/${id}`}
             className="block space-y-2 group"
           >
-            <h2 className="text-lg font-bold text-slate-900 dark:text-white line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+            <h2 className="text-lg font-bold text-slate-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
               {title}
             </h2>
-            <p className="line-clamp-3 text-sm text-muted-foreground">
+            <p className="line-clamp-4 text-sm text-slate-600 leading-relaxed">
               {description}
             </p>
           </Link>
         </div>
 
         {/* Dolny pasek: polubienia oraz przyciski kontrolne */}
-        <div className="flex items-center justify-between mt-auto pt-2 border-t border-slate-100 dark:border-slate-800">
-          <div className="flex items-center gap-1.5 text-sm font-medium text-slate-600 dark:text-slate-400">
+        <div className="flex items-center justify-between mt-auto pt-3 border-t border-slate-100">
+          <div className="flex items-center gap-1.5 text-sm font-medium text-slate-600">
             <HeartIcon size={18} className="text-red-500 fill-red-500" />
             <span>{likes.length}</span>
           </div>
