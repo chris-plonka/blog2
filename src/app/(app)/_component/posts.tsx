@@ -20,11 +20,13 @@ const Posts = ({ user }: PostsProps) => {
 
   if (isLoading) {
     return (
-      <>
+      <div className="columns-1 md:columns-2 gap-6 p-4 max-w-5xl mx-auto space-y-6">
         {Array.from({ length: 10 }).map((_, i) => (
-          <PostPlaceholder key={i} />
+          <div key={i} className="break-inside-avoid mb-6">
+            <PostPlaceholder />
+          </div>
         ))}
-      </>
+      </div>
     );
   }
 
@@ -33,11 +35,13 @@ const Posts = ({ user }: PostsProps) => {
   }
 
   return (
-    // Zmieniono lg:grid-cols-3 na lg:grid-cols-2 (układ: 1 kolumna na telefonie, 2 na komputerze i tablecie)
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 p-4 max-w-5xl mx-auto">
+    {/* Zmieniono na płynny układ kolumnowy Masonry z marginesami dolnymi */}
+    <div className="columns-1 md:columns-2 gap-6 p-4 max-w-5xl mx-auto space-y-6">
       {data &&
         data.map((post) => (
-          <PostCard key={post.id} post={post} user={user} queryKey={"posts"} />
+          <div key={post.id} className="break-inside-avoid mb-6">
+            <PostCard post={post} user={user} queryKey={"posts"} />
+          </div>
         ))}
     </div>
   );
