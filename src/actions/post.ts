@@ -233,6 +233,7 @@ export const getUserPosts = async (id: string) => {
         id: true,
         title: true,
         description: true,
+        content: true, // <-- DODANE: Potrzebne do zdjęć w sekcji "Moje posty"
         published: true,
         createdAt: true,
         likes: {
@@ -271,6 +272,7 @@ export const getPosts = async () => {
         id: true,
         title: true,
         description: true,
+        content: true, // <-- DODANE: Kluczowa zmiana dla strony głównej!
         createdAt: true,
         published: true,
         author: {
@@ -317,6 +319,7 @@ export const getUsersPosts = async (id: string) => {
             id: true,
             title: true,
             description: true,
+            content: true, // <-- DODANE: Potrzebne do profilu publicznego autora
             published: true,
             createdAt: true,
             likes: {
