@@ -33,7 +33,7 @@ const Posts = ({ user }: PostsProps) => {
   }
 
   return (
-    <div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
       {data &&
         data.map((post) => (
           <PostCard key={post.id} post={post} user={user} queryKey={"posts"} />
