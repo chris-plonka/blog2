@@ -33,7 +33,8 @@ const Posts = ({ user }: PostsProps) => {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+    // Zmieniono lg:grid-cols-3 na lg:grid-cols-2 (układ: 1 kolumna na telefonie, 2 na komputerze i tablecie)
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 p-4 max-w-5xl mx-auto">
       {data &&
         data.map((post) => (
           <PostCard key={post.id} post={post} user={user} queryKey={"posts"} />
