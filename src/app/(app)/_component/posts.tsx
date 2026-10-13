@@ -35,7 +35,7 @@ const Posts = ({ user }: PostsProps) => {
   }
 
   return (
-    {/* Zmieniono na płynny układ kolumnowy Masonry z marginesami dolnymi */}
+    
     <div className="columns-1 md:columns-2 gap-6 p-4 max-w-5xl mx-auto space-y-6">
       {data &&
         data.map((post) => (
