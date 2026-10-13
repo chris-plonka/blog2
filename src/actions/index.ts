@@ -1,2 +1,2 @@
-export * from "./post.ts-ORIGINAL";
+export * from "./post.ts";
 export * from "./settings";
