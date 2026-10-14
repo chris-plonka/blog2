@@ -1,0 +1,16 @@
+ddb4c192f1ecba0a05b8eb565d36d54c6f8e24a9 e839d586aebbff3157699767ce381993e2321f6f Krzysztof Płonka <info@krzysztofplonka.pl> 1791921778 +0200	commit: change layout to grid
+e839d586aebbff3157699767ce381993e2321f6f fc63f42fd2a4f85fca88597457568772d21cdf4d Krzysztof Płonka <info@krzysztofplonka.pl> 1791923007 +0200	commit: add image to post-card
+fc63f42fd2a4f85fca88597457568772d21cdf4d bc7ff6bb2f589ab1b956e5312a0cf56d7afce94c Krzysztof Płonka <info@krzysztofplonka.pl> 1791923762 +0200	commit: post-card ver 2
+bc7ff6bb2f589ab1b956e5312a0cf56d7afce94c 16525f756e2448f3f74e38f1a425ab34e2e64db4 Krzysztof Płonka <info@krzysztofplonka.pl> 1791924360 +0200	commit: posts ver 2
+16525f756e2448f3f74e38f1a425ab34e2e64db4 c4cdbe44979c97552520731fe15152d96fd92b2a Krzysztof Płonka <info@krzysztofplonka.pl> 1791924875 +0200	commit: post-card ver. 3
+c4cdbe44979c97552520731fe15152d96fd92b2a 01680064de8b973d744cb97b35012e053a661443 Krzysztof Płonka <info@krzysztofplonka.pl> 1791925406 +0200	commit: posts ver. 3
+01680064de8b973d744cb97b35012e053a661443 c97661f652ca1cb96472e6e0b274e4ee386451b8 Krzysztof Płonka <info@krzysztofplonka.pl> 1791925731 +0200	commit: posts ver. 4
+c97661f652ca1cb96472e6e0b274e4ee386451b8 accc1b289faff4613651bec02e7fa8a61f8f9bc5 Krzysztof Płonka <info@krzysztofplonka.pl> 1791926150 +0200	commit: post-card ver 4
+accc1b289faff4613651bec02e7fa8a61f8f9bc5 798312405d752098813ed05c136a7944b331ccca Krzysztof Płonka <info@krzysztofplonka.pl> 1791926986 +0200	commit: post.ts in actions
+798312405d752098813ed05c136a7944b331ccca f9ed76a492830e5aef374d52bc95e3d30582ea13 Krzysztof Płonka <info@krzysztofplonka.pl> 1791927648 +0200	commit: fix: correct post.ts import and update tsconfig paths
+f9ed76a492830e5aef374d52bc95e3d30582ea13 81c77d8e2217ac4f369a5001c7a7dfd726421e4d Krzysztof Płonka <info@krzysztofplonka.pl> 1791927676 +0200	commit: index.ts in actions
+81c77d8e2217ac4f369a5001c7a7dfd726421e4d 295431a1fb12d82a9d8831e09c5245be5002db93 Krzysztof Płonka <info@krzysztofplonka.pl> 1791928330 +0200	commit: prostokatny kafelek
+295431a1fb12d82a9d8831e09c5245be5002db93 c5bf09f46fe4243d326fd6d5d212cfd55c7075be Krzysztof Płonka <info@krzysztofplonka.pl> 1791989121 +0200	commit: idex.ts from src/actions
+c5bf09f46fe4243d326fd6d5d212cfd55c7075be c76f120bf7d88a476d467655283c3b4412be84b2 Krzysztof Płonka <info@krzysztofplonka.pl> 1791989725 +0200	commit: unset changes
+c76f120bf7d88a476d467655283c3b4412be84b2 440bc601997428e48ba42f0c843131e299bb3be9 Krzysztof Płonka <info@krzysztofplonka.pl> 1791990201 +0200	commit: original files
+440bc601997428e48ba42f0c843131e299bb3be9 dcf60f374ca37a00bb244e13acfbef82acd4020b Krzysztof Płonka <info@krzysztofplonka.pl> 1791990767 +0200	commit: tscongig.json original
