@@ -13,26 +13,24 @@ interface PostsProps {
 }
 
 const Posts = ({ user }: PostsProps) => {
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["posts"],
     queryFn: () => getPosts(),
   });
 
-
-if (!data || data.length === 0) {
-    return <div>No posts found.</div>;
-  }
- /*  if (isLoading) {
+  if (isLoading) {
     return (
       <>
-        {Array.from({ length: 3 }).map((post, i) => (
+        {Array.from({ length: 10 }).map((_, i) => (
           <PostPlaceholder key={i} />
         ))}
       </>
     );
-  } */
+  }
 
-  
+  if (!data || data.length === 0) {
+    return <div>No posts found.</div>;
+  }
 
   return (
     <div>
