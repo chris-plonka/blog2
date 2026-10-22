@@ -17,7 +17,7 @@ const ThemeToggle = () => {
       }}
       aria-label='Toggle theme'
     >
-      <SunIcon className='size-5 dark:block' />
+      <SunIcon className='hidden size-5 dark:block' />
       <MoonIcon className='size-5 dark:hidden' />
     </Button>
   )
