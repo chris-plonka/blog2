@@ -13,7 +13,7 @@ const ThemeToggle = () => {
       variant='ghost'
       size='icon'
       onClick={() => {
-        setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+        setTheme(resolvedTheme === 'dark' ? 'dark' : 'light')
       }}
       aria-label='Toggle theme'
     >
