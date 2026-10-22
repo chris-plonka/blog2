@@ -1,6 +1,7 @@
 import { getCurrentUser } from "@/lib/get-current-user";
 import Link from "next/link";
 import Menu from "./menu";
+import ThemeToggle from './theme-toggle'
 import NewPostButton from "./new-post-button";
 
 const Navbar = async () => {
@@ -15,6 +16,7 @@ const Navbar = async () => {
 
         <div className="flex items-center gap-4">
           {user && <NewPostButton />}
+		  <ThemeToggle />
           <Menu user={user} />
         </div>
       </div>
