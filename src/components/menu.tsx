@@ -71,9 +71,7 @@ const Menu = (props: MenuProps) => {
         <DropdownMenuItem asChild>
           <Link href="/me/settings">Settings</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={switchTheme}>
-          Switch Appearence
-        </DropdownMenuItem>
+    
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
           <a
@@ -83,11 +81,7 @@ const Menu = (props: MenuProps) => {
             Report a bug
           </a>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <a target="_blank" href="https://krzysztofplonka.pl">
-            About Me
-          </a>
-        </DropdownMenuItem>
+       
 
         <DropdownMenuItem onClick={() => signOut()}>Log out</DropdownMenuItem>
       </DropdownMenuContent>

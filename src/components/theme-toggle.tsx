@@ -13,12 +13,12 @@ const ThemeToggle = () => {
       variant='ghost'
       size='icon'
       onClick={() => {
-        setTheme(resolvedTheme === 'dark' ? 'dark' : 'light')
+        setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
       }}
       aria-label='Toggle theme'
     >
-      <SunIcon className='size-5 dark:hidden' />
-      <MoonIcon className='hidden size-5 dark:block' />
+      <SunIcon className='size-5 dark:block' />
+      <MoonIcon className='hidden size-5 dark:hidden' />
     </Button>
   )
 }
