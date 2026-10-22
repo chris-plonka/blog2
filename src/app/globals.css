@@ -75,3 +75,58 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ==========================================
+   DOMYŚLNY MOTYW (ciemne tło w :root)
+   Pasek przewijania dopasowany do Dark Mode
+   ========================================== */
+
+/* Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16; /* Głęboki granat z Twojego --background w :root */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b; /* Ciemnoszary suwak */
+  border-radius: 6px;
+  border: 3px solid #090d16; /* Odstęp od krawędzi */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155; /* Jaśniejszy suwak po najechaniu */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e293b #090d16;
+}
+
+
+/* ==========================================
+   AKTYWNY TRYB JASNY (klasa .dark)
+   Pasek przewijania dopasowany do Light Mode
+   ========================================== */
+
+/* Chrome, Safari, Edge */
+.dark::-webkit-scrollbar-track {
+  background: #ffffff; /* Białe tło z Twojego --background w .dark */
+}
+
+.dark::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* Jasny, wyraźny suwak (slate-300) */
+  border: 3px solid #ffffff; /* Odstęp z białym tłem */
+}
+
+.dark::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; /* Ciemniejsza szarość przy najechaniu (slate-400) */
+}
+
+/* Firefox */
+.dark {
+  scrollbar-color: #cbd5e1 #ffffff;
+}
