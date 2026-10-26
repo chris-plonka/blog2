@@ -18,6 +18,11 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        // Nadpisujemy domyślną rodzinę sans, dodając Montserrat na początek
+        sans: ['Montserrat', 'sans-serif'],
+      },
+   		
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
