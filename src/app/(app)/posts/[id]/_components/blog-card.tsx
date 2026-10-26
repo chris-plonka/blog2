@@ -54,7 +54,7 @@ const Blogcard = ({ id, user }: userPostProps) => {
         />
       </div>
       <div className="my-8">
-        <h1 className="text-2xl font-bold sm:text-3xl max-w-3xl whitespace-normal break-words">
+        <h1 className="text-2xl sm:text-3xl max-w-3xl whitespace-normal break-words">
           {title}
         </h1>
         <p className="mt-4 text-muted-foreground max-w-3xl whitespace-normal break-words">
