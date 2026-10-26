@@ -59,7 +59,7 @@ const PostCard = (props: PostCardProps) => {
           href={`/${published ? "posts" : "editor"}/${id}`}
           className="block space-y-2"
         >
-          <h2 className="text-lg font-semibold max-w-3xl overflow-hidden text-ellipsis whitespace-normal">
+          <h2 className="text-lg font-semibold  overflow-hidden text-ellipsis whitespace-normal">
             {title}
           </h2>
           <p className="line-clamp-3 max-w-3xl overflow-hidden text-ellipsis whitespace-normal text-muted-foreground">
