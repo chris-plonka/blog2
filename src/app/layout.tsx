@@ -17,7 +17,7 @@ const montserrat = Montserrat({
   variable: "--font-montserrat", // definiujemy zmienną CSS
 });
 
-export const metadata: Metadata = {
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
