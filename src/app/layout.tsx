@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Providers from "@/components/shared/provider";
@@ -11,7 +11,13 @@ import {
 } from "@/lib/constants";
 import { Metadata } from "next";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400",  "500", "700", "900"], // wybierz potrzebne grubości
+  variable: "--font-montserrat", // definiujemy zmienną CSS
+});
+
+export const metadata: Metadata = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -102,9 +108,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${montserrat.variable}`} suppressHydrationWarning>
       <Providers>
-        <body className={inter.className}>
+        <body className="antialiased">
           <Navbar />
           <main className="mx-auto min-h-[calc(100vh-68px)] max-w-4xl px-4 pb-16 pt-20 lg:pt-24">
             {children}
