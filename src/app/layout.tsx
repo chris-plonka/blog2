@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   keywords: ["blog", "one-blog", "full-stack blog", "nextjs blog"],
-  themeColor: "#000000",
+  themeColor: "#ffffff",
   creator: "Akshay Moolya",
   openGraph: {
     url: SITE_URL,
