@@ -110,7 +110,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} [scrollbar-gutter:stable]`} suppressHydrationWarning>
       <Providers>
-        <body className="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50 antialiased">
+        <body className="antialiased">
           <Navbar />
           <main className="mx-auto min-h-[calc(100vh-68px)] max-w-4xl px-4 pb-16 pt-20 lg:pt-24">
             {children}
