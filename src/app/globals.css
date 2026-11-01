@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 html {
+  /* Kluczowa linijka: rezerwuje miejsce na scrollbar na każdej podstronie */
+  scrollbar-gutter: stable;
+}
+
+html {
   color-scheme: light;
 }
 
