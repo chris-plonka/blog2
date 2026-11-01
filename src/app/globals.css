@@ -6,6 +6,14 @@
 
 html {
   scrollbar-gutter: stable;
+
+  /* Zapobiega poziomemu przesuwaniu całej struktury */
+  overflow-x: hidden; 
+}
+
+body {
+  /* Alternatywne, agresywne wymuszenie paska przewijania, jeśli biblioteka go usuwa */
+  overflow-y: scroll !important;
 }
 
 @layer base {
