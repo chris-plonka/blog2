@@ -3,7 +3,7 @@
 import * as React from "react"
 import * as ToastPrimitives from "@radix-ui/react-toast"
 import { cva, type VariantProps } from "class-variance-authority"
-import { X } from "lucide-react"
+import { X, CheckCircle2 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -29,7 +29,7 @@ const toastVariants = cva(
   {
     variants: {
       variant: {
-        default: "border bg-background text-foreground",
+        default: "border bg-background fg-foreground",
         destructive:
           "destructive group border-destructive bg-destructive text-destructive-foreground",
       },
@@ -44,13 +44,31 @@ const Toast = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
     VariantProps<typeof toastVariants>
->(({ className, variant, ...props }, ref) => {
+>(({ className, variant,children, ...props }, ref) => {
   return (
     <ToastPrimitives.Root
       ref={ref}
       className={cn(toastVariants({ variant }), className)}
       {...props}
-    />
+      >
+    
+      <div className="flex w-full items-start gap-3">
+        
+        {variant !== "destructive" && (
+          <CheckCircle2 
+    className="h-7 w-7 shrink-0 text-green-600 dark:text-green-500 fill-green-600 dark:fill-green-500 mt-0.5" 
+    strokeWidth={3}
+    color="white" 
+  />
+        )}
+        
+        <div className="flex-1 flex flex-col gap-1">
+          {children} 
+        </div>
+        
+      </div>
+     
+    </ToastPrimitives.Root>
   )
 })
 Toast.displayName = ToastPrimitives.Root.displayName
