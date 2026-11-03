@@ -6,8 +6,8 @@ body {
   pointer-events: auto !important;
 }
 body[data-scroll-locked] {
-  overflow: auto !important;
   padding-right: 0px !important;
+  overflow: auto !important;
 }
 
 html {
