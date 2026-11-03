@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body[data-scroll-locked] {
+  padding-right: 0px !important;
+}
+
 html {
   /* Kluczowa linijka: rezerwuje miejsce na scrollbar na każdej podstronie */
   scrollbar-gutter: stable;
