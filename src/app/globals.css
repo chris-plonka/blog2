@@ -2,18 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  pointer-events: auto !important;
-}
-body[data-scroll-locked] {
-  padding-right: 0px !important;
-  overflow: auto !important;
-}
 
-html {
-  /* Kluczowa linijka: rezerwuje miejsce na scrollbar na każdej podstronie */
-  scrollbar-gutter: stable !important;
-}
 
 html {
   color-scheme: light;
@@ -105,4 +94,23 @@ html, body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+/* 1. Zapewnij stałą obecność rynny na pasek przewijania */
+html {
+  scrollbar-gutter: stable !important;
+}
+
+/* 2. Zresetuj WSZYSTKIE automatyczne przesunięcia wstrzykiwane przez Radix UI */
+html body[data-scroll-locked] {
+  padding-right: 0px !important;
+  margin-right: 0px !important;
+  --removed-body-scroll-bar-size: 0px !important;
+}
+
+/* 3. Dodatkowe zabezpieczenie przed drganiem przy zamykaniu (Cancel) */
+html body[data-scroll-locked][data-scroll-locked] {
+  padding-right: 0px !important;
+  margin-right: 0px !important;
 }
