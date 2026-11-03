@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  pointer-events: auto !important;
+}
 body[data-scroll-locked] {
+  overflow: auto !important;
   padding-right: 0px !important;
-}	
+}
 
 html {
   /* Kluczowa linijka: rezerwuje miejsce na scrollbar na każdej podstronie */
