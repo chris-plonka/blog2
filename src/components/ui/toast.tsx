@@ -56,8 +56,8 @@ const Toast = React.forwardRef<
         
         {variant !== "destructive" && (
           <CheckCircle2 
-    className="h-7 w-7 shrink-0 text-green-600 dark:text-green-500 fill-green-600 dark:fill-green-500 mt-0.5" 
-    strokeWidth={3}
+    className="h-7 w-7 shrink-0 text-foreground fill-green-600 dark:fill-green-500 mt-0.5" 
+    strokeWidth={2}
     color="white" 
   />
         )}
